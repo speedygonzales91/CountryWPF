@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Country.cs" />
     <Compile Include="ViewModel\Command\OpenGameCommand.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="View\GameWindow.xaml.cs">
@@ -108,8 +109,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
