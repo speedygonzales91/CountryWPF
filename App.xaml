@@ -10,6 +10,10 @@
         <Style TargetType="StackPanel" x:Key="backgroundColor">
             <Setter Property="Background" Value="{StaticResource introBackGroundColor}"></Setter>
         </Style>
+        
+        <Style TargetType="ListBox" x:Key="listBoxStyle">
+            <Setter Property="Background" Value="{StaticResource introBackGroundColor}"></Setter>
+        </Style>
 
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Arial"></Setter>
@@ -21,6 +25,8 @@
             <Setter Property="TextAlignment" Value="Center"></Setter>
             <Setter Property="FontWeight" Value="Bold"></Setter>
         </Style>
+        
+        
 
         <Style TargetType="TextBlock" x:Key="introDescription">
             <Setter Property="FontSize" Value="15"></Setter>

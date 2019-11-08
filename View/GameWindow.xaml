@@ -7,27 +7,30 @@
         xmlns:local="clr-namespace:CountryWPF.View"
         xmlns:imageconverter ="clr-namespace:CountryWPF.ViewModel.Converter"
         mc:Ignorable="d"
-        Title="GameWindow" Height="650" Width="600">
+        Title="GameWindow" Height="650" Width="640">
     <Window.Resources>
         <vm:GameWindowVM x:Key="vm"></vm:GameWindowVM>
         <imageconverter:BitMapConverter x:Key="imageConverter"></imageconverter:BitMapConverter>
     </Window.Resources>
     
-    <StackPanel DataContext="{StaticResource vm}">
+    <StackPanel DataContext="{StaticResource vm}"
+                Style="{StaticResource backgroundColor}">
         <!--<Image Source="{Binding Source={StaticResource vm}, Path=Country.Flag, Converter={StaticResource imageConverter}}"
             Margin="20"
                Width="16" Height="16" Stretch="Uniform"
             x:Name="TestImage">
         </Image>-->
 
-        <Label>Country Search</Label>
+        <TextBlock  Margin="20,20,20,20"
+                    Style="{StaticResource headerText}">Country Project</TextBlock>
         <TextBox>Not Working</TextBox>
-        <ListBox Margin="20"
+        <ListBox Margin="10"
             ItemsSource="{Binding CountryList}"
                  ScrollViewer.VerticalScrollBarVisibility="Visible"
                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                  HorizontalContentAlignment="Center"
-                 MaxHeight="500">
+                 MaxHeight="500"
+                 Style="{StaticResource listBoxStyle}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Width="550"
@@ -37,21 +40,24 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="20">
-                        <Border BorderThickness="0.5" BorderBrush="Black" CornerRadius="30">
+                        <!--<Border BorderThickness="3.5" BorderBrush="#66FCF1" CornerRadius="80">
                             <Image
                                     Source="{Binding Alpha2Code, Converter={StaticResource imageConverter}}"
-                                 Stretch="Fill"
+                                 Stretch="UniformToFill" 
+
                                     />
-                        </Border>
-                        <!--<Border BorderThickness="0.5" BorderBrush="Black" CornerRadius="30">
-                            <Ellipse Width="50" Height="80" >
-                                <Ellipse.Fill>
-                                    <ImageBrush 
-                                    ImageSource="{Binding Alpha2Code, Converter={StaticResource imageConverter}}"
-                                    />
-                                </Ellipse.Fill>
-                            </Ellipse>
+
                         </Border>-->
+                        <Grid>
+                        <Ellipse Width="90" Height="90" >
+                            <Ellipse.Fill>
+                                <ImageBrush 
+                                    ImageSource="{Binding Alpha2Code, Converter={StaticResource imageConverter}}"
+                                    AlignmentX="Center" AlignmentY="Center"
+                                    />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        </Grid>
                         <TextBlock Text="{Binding Name}"></TextBlock>
                         <!--<Image Margin="5">
                             <Image.Source>
