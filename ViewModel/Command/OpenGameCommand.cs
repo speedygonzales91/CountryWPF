@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CountryWPF.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,9 @@ using System.Windows.Input;
 
 namespace CountryWPF.ViewModel.Command
 {
-    class OpenGameCommand : ICommand
+    public class OpenGameCommand : ICommand
     {
+        public GameWindow Game { get; set; }
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
@@ -18,7 +20,8 @@ namespace CountryWPF.ViewModel.Command
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            Game = new GameWindow();
+            Game.ShowDialog();
         }
     }
 }
