@@ -294,8 +294,8 @@ namespace CountryWPF.Model
 
 
 
-        private double _area;
-        public double Area
+        private string _area;
+        public string Area
         {
             get { return _area; }
             set 
@@ -307,12 +307,12 @@ namespace CountryWPF.Model
 
 
 
-        private double _gini;
-        public double Gini
-        {
-            get { return _gini; }
-            set { _gini = value; OnPropertyChanged("Gini"); }
-        }
+        //private double _gini;
+        //public double Gini
+        //{
+        //    get { return _gini; }
+        //    set { _gini = value; OnPropertyChanged("Gini"); }
+        //}
 
 
         private IList<string> _timezones;

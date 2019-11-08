@@ -72,6 +72,8 @@
     </Compile>
     <Compile Include="Model\Country.cs" />
     <Compile Include="ViewModel\Command\OpenGameCommand.cs" />
+    <Compile Include="ViewModel\Converter\BitMapConverter.cs" />
+    <Compile Include="ViewModel\GameWindowVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\RestCountryApi.cs" />
     <Compile Include="View\GameWindow.xaml.cs">

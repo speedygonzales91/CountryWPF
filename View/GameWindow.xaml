@@ -3,14 +3,64 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:CountryWPF.ViewModel"
         xmlns:local="clr-namespace:CountryWPF.View"
+        xmlns:imageconverter ="clr-namespace:CountryWPF.ViewModel.Converter"
         mc:Ignorable="d"
         Title="GameWindow" Height="650" Width="600">
-    <StackPanel>
+    <Window.Resources>
+        <vm:GameWindowVM x:Key="vm"></vm:GameWindowVM>
+        <imageconverter:BitMapConverter x:Key="imageConverter"></imageconverter:BitMapConverter>
+    </Window.Resources>
+    
+    <StackPanel DataContext="{StaticResource vm}">
+        <!--<Image Source="{Binding Source={StaticResource vm}, Path=Country.Flag, Converter={StaticResource imageConverter}}"
+            Margin="20"
+               Width="16" Height="16" Stretch="Uniform"
+            x:Name="TestImage">
+        </Image>-->
+
         <Label>Country Search</Label>
-        <TextBox></TextBox>
-        <ListView>
-            
-        </ListView>
+        <TextBox>Not Working</TextBox>
+        <ListBox Margin="20"
+            ItemsSource="{Binding CountryList}"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"
+                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                 HorizontalContentAlignment="Center"
+                 MaxHeight="500">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Width="550"
+                        Columns="3"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="20">
+                        <Border BorderThickness="0.5" BorderBrush="Black" CornerRadius="30">
+                            <Image
+                                    Source="{Binding Alpha2Code, Converter={StaticResource imageConverter}}"
+                                 Stretch="Fill"
+                                    />
+                        </Border>
+                        <!--<Border BorderThickness="0.5" BorderBrush="Black" CornerRadius="30">
+                            <Ellipse Width="50" Height="80" >
+                                <Ellipse.Fill>
+                                    <ImageBrush 
+                                    ImageSource="{Binding Alpha2Code, Converter={StaticResource imageConverter}}"
+                                    />
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Border>-->
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                        <!--<Image Margin="5">
+                            <Image.Source>
+                                <BitmapImage x:Name="TestImage"></BitmapImage>
+                            </Image.Source>
+                        </Image>-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </StackPanel>
 </Window>
