@@ -4,10 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CountryWPF"
+        xmlns:image ="clr-namespace:CountryWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
-    <StackPanel>
-        <Label>Seach</Label>
-        <TextBox></TextBox>
+        Title="MainWindow" Height="470" Width="400">
+    <StackPanel Style="{StaticResource backgroundColor}">
+        <TextBlock  Margin="20,20,20,40"
+                    Style="{StaticResource headerText}">Country Project</TextBlock>
+        <Image Height="150" Source="/Resource/globe.png"></Image>
+        <Button   Margin="0,30,0,0"
+                  Width="100" 
+                  Style="{StaticResource RoundedButtonStyle}"
+                  Content="Start"></Button>
+        <TextBlock  Margin="0,20,0,0"
+                    Height="100"
+                    Width="300"
+                    Style="{StaticResource introDescription}"
+                    >This is a home project from 
+            <Run FontWeight="Bold">Zsolt Molnar</Run> . This was the original inspiration: 
+            <Hyperlink FontStyle="Italic"
+                       NavigateUri="https://cloud.addictivetips.com/wp-content/uploads/2017/11/switchr.jpg">https://cloud.addictivetips.com/wp-content/uploads/2017/11/switchr.jpg </Hyperlink> 
+        </TextBlock>
     </StackPanel>
 </Window>
