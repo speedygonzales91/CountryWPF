@@ -29,18 +29,14 @@
             CornerRadius="5"
                 Width="200"
                 Background="White">
-            <StackPanel Margin="5"
-                    Orientation="Horizontal"
-                        >
+            <StackPanel Margin="8"
+                    Orientation="Horizontal">
                 <Image Source="https://img.icons8.com/ios-filled/50/000000/search.png" 
                    Height="18"/>
                 <TextBlock Text="Not Working"
                        Margin="3 0 0 0"
-                           />
-
+                           FontSize="15"/>
             </StackPanel>
-
-
         </Border>
         <ListBox Margin="10"
             ItemsSource="{Binding CountryList}"
